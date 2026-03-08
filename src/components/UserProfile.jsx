@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Mail, Phone, Trash2 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 
 const ProfileContainer = styled.div`
   padding: 24px;
@@ -32,14 +32,6 @@ const ProfileEmail = styled.p`
 
 const FormGroup = styled.div`
   margin-bottom: 16px;
-`;
-
-const FormLabel = styled.label`
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: #333;
 `;
 
 const FormInput = styled.input`
@@ -87,15 +79,15 @@ export function UserProfile() {
   return (
     <ProfileContainer>
       <ProfileImage src="https://via.placeholder.com/80?text=User" />
+
       <ProfileName>{name}</ProfileName>
 
-       <ProfileEmail>{email}</ProfileEmail>
+      <ProfileEmail>{email}</ProfileEmail>
 
       <FormGroup>
-       
         <FormInput 
           type="text" 
-          placeholder="Enter your name"
+          placeholder="Enter name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -104,17 +96,15 @@ export function UserProfile() {
       <FormGroup>
         <FormInput 
           type="email"
-          placeholder="Enter your email"
+          placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormGroup>
 
       <ActionButtons>
-       
         <SaveButton>Save</SaveButton>
 
-       
         <DeleteButton>
           <Trash2 size={20} />
         </DeleteButton>
